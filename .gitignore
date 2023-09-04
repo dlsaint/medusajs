@@ -1,0 +1,75 @@
+# compiled output
+/dist
+/node_modules
+node_modules
+build
+
+# Logs
+log
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.eslintcache
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+/docker-compose.yml
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.history
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.env
+.envrc
+
+# static file
+/public/*
+!/public/.gitkeep
+# 根目录 app/public 跟以前保持一致，从而避免一些私有化兼容换路径
+app/public/static-builtin/*
+!app/public/static-builtin/.gitignore
+app/public/help/*
+!app/public/help/.gitignore
+app/public/console/*
+!app/public/console/.gitignore
+app/public/apidoc/*
+!app/public/apidoc/.gitignore
+app/public/admin/*
+!app/public/admin/.gitignore
+app/public/web/*
+!app/public/web/.gitignore
+app/public/web-base/*
+!app/public/web-base/.gitignore
+app/public/static-scripts/*
+!app/public/static-scripts/.gitignore
+
+apifox-ee.docker
+apifox-ee.docker.zip
+apifox-pdv.docker
+apifox-pdv.docker.zip
+
+# development env
+.env-base.json
+.env-development.json
+.env-production.json
