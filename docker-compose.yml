@@ -8,6 +8,7 @@ services:
     container_name: medusa-server
     ports:
       - "7001:7001"
+      - "9000:9000"
     depends_on:
       - postgres
       - redis
@@ -38,6 +39,8 @@ services:
     build:
       context: ./storefront
       dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
     image: storefront:test
     container_name: medusa-storefront
     depends_on:
