@@ -52,12 +52,12 @@ const plugins = [
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
       },
-      backend:"http://12.192.162.1:9001"
+      // backend:"http://12.192.162.1:9001"
     },
-    define: {
-      __MEDUSA_BACKEND_URL__: "12.192.162.1:9001",
-      MEDUSA_BACKEND_URL: "12.192.162.1:9001"
-    }
+    // define: {
+    //   __MEDUSA_BACKEND_URL__: "12.192.162.1:9001",
+    //   MEDUSA_BACKEND_URL: "12.192.162.1:9001"
+    // }
   },
 ];
 
