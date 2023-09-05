@@ -2,4 +2,4 @@
 #sleep 1000000
 medusa migrations run
 
-medusa $1
+medusa start
