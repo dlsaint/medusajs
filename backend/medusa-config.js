@@ -52,7 +52,8 @@ const plugins = [
       },
     },
     define: {
-      __MEDUSA_BACKEND_URL__: "12.192.162.1:9001"
+      __MEDUSA_BACKEND_URL__: "12.192.162.1:9001",
+      MEDUSA_BACKEND_URL: "12.192.162.1:9001"
     }
   },
 ];
