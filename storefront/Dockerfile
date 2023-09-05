@@ -2,7 +2,7 @@ FROM node:18.17.1 as builder
 
 WORKDIR /app/storefront
 
-COPY . . 
+COPY . .
 
 RUN rm -rf node_modules
 
@@ -14,7 +14,7 @@ RUN yarn add sharp
 
 RUN yarn install
 
-RUN gatsby build
+# RUN gatsby build
 
 FROM nginx
 
