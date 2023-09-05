@@ -1,4 +1,4 @@
-FROM node:17.1.0
+FROM node:latest
 
 WORKDIR /app/medusa
 
@@ -8,7 +8,7 @@ RUN apt-get update
 
 RUN apt-get install -y python
 
-RUN npm install -g npm@8.1.2
+RUN npm install -g npm@latest
 
 RUN npm install -g babel-cli
 
