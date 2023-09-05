@@ -27,8 +27,8 @@ const ADMIN_CORS =
     process.env.ADMIN_CORS || "http://192.168.10.208:7000,http://192.168.10.208:7001";
 
 // CORS to avoid issues when consuming Medusa from a client
-// const STORE_CORS = process.env.STORE_CORS || "http://192.168.10.208:8000";
-const STORE_CORS = "*";
+const STORE_CORS = process.env.STORE_CORS || "http://192.168.10.208:8000";
+// const STORE_CORS = "*";
 
 const DATABASE_URL =
     process.env.DATABASE_URL || "postgres://localhost/medusa-store";
@@ -48,14 +48,12 @@ const plugins = [
         resolve: "@medusajs/admin",
         /** @type {import('@medusajs/admin').PluginOptions} */
         options: {
-            serve: true,
             path: "/app1",
             autoRebuild: true,
             develop: {
-                open: false,
+                open: true,
             },
-            port: 7001,
-            backend: "http://12.192.162.1:9001"
+            // backend: "http://12.192.162.1:9001"
         },
         // define: {
         //   __MEDUSA_BACKEND_URL__: "12.192.162.1:9001",
