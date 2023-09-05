@@ -39,8 +39,6 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-.env
-.envrc
 
 # static file
 /public/*
