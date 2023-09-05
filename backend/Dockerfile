@@ -18,4 +18,4 @@ RUN npm install --loglevel=error
 
 COPY . .
 
-ENTRYPOINT ["./develop.sh", "develop"]
+ENTRYPOINT ["./develop.sh", "start"]
