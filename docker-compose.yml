@@ -31,6 +31,10 @@ services:
     container_name: medusa-storefront
     depends_on:
       - backend
+    environment:
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://12.168.10.208:9000
+      MEDUSA_BACKEND_URL: http://12.168.10.208:9000
+      NEXT_PUBLIC_BASE_URL: http://12.168.10.208:8000
 
   postgres:
     image: postgres:10.4
