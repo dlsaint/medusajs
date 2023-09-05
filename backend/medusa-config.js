@@ -47,11 +47,13 @@ const plugins = [
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
+      serve: true,
       path: "/app1",
-      autoRebuild: true,
+      autoRebuild: false,
       develop: {
-        open: process.env.OPEN_BROWSER == "false",
+        open: false,
       },
+      port: 7001
       // backend:"http://12.192.162.1:9001"
     },
     // define: {
