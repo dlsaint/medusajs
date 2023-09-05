@@ -51,6 +51,9 @@ const plugins = [
         open: process.env.OPEN_BROWSER !== "false",
       },
     },
+    define: {
+      __MEDUSA_BACKEND_URL__: "12.192.162.1:9001"
+    }
   },
 ];
 
