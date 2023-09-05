@@ -48,12 +48,12 @@ const plugins = [
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
-      // path: "/app1",
+      path: "/app1",
       autoRebuild: true,
-      // develop: {
-      //   open: process.env.OPEN_BROWSER !== "false",
-      // },
-      backend:"http://12.192.162.1:9001"
+      develop: {
+        open: process.env.OPEN_BROWSER == "false",
+      },
+      // backend:"http://12.192.162.1:9001"
     },
     // define: {
     //   __MEDUSA_BACKEND_URL__: "12.192.162.1:9001",
