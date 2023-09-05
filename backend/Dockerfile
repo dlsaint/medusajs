@@ -16,8 +16,6 @@ RUN npm install -g @medusajs/medusa-cli@latest
 
 RUN npm install --loglevel=error
 
-#RUN yarn add @medusajs/admin
-
 COPY . .
 
-ENTRYPOINT ["./develop.sh", "develop"]
+ENTRYPOINT ["./develop.sh", "start"]
