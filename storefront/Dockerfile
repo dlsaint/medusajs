@@ -1,4 +1,4 @@
-FROM node:18.17.1 as builder
+FROM node:latest
 
 WORKDIR /app/storefront
 
@@ -8,18 +8,11 @@ RUN rm -rf node_modules
 
 RUN apt-get update
 
-RUN yarn global add gatsby-cli@4.10.0
+RUN npm install -g npm@latest
 
-RUN yarn add sharp
+RUN npm install sharp
 
-RUN yarn install
+RUN npm install --loglevel=error
 
-# RUN gatsby build
-
-FROM nginx
-
-EXPOSE 80
-
-COPY --from=builder /app/storefront/public /usr/share/nginx/html
-
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+#ENTRYPOINT ["gatsby", "develop", "-H", "0.0.0.0", "-p", "8000" ]
+ENTRYPOINT ["./entrypoint-frontend.sh"]
