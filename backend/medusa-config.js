@@ -49,10 +49,10 @@ const plugins = [
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
       path: "/app1",
-      autoRebuild: true,
-      develop: {
-        open: process.env.OPEN_BROWSER == "false",
-      },
+      autoRebuild: false,
+      // develop: {
+      //   open: process.env.OPEN_BROWSER == "false",
+      // },
       // backend:"http://12.192.162.1:9001"
     },
     // define: {
