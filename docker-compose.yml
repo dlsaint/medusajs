@@ -18,7 +18,19 @@ services:
       NODE_ENV: development
       JWT_SECRET: some_jwt_secret
       COOKIE_SECRET: some_cookie_secret
+      API_URL: http://192.168.10.208:9000
       PORT: 9000
+
+  storefront:
+    build:
+      context: ./storefront
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    image: storefront:test
+    container_name: medusa-storefront
+    depends_on:
+      - backend
 
   postgres:
     image: postgres:10.4
@@ -35,13 +47,4 @@ services:
     expose:
       - 6379
 
-  storefront:
-    build:
-      context: ./storefront
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    image: storefront:test
-    container_name: medusa-storefront
-    depends_on:
-      - backend
+

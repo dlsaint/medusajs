@@ -11,7 +11,7 @@ const PRODUCT_MODULE_ENABLED =
   process.env.FEATURE_PRODUCTMODULE_ENABLED || false
 
 // The API_BASE_URL is set in the .env file. It is the base URL of your Next.js app.
-const API_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:8000"
+const API_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://192.168.10.208:8000"
 
 // Set DEBUG to true to console.log where the data is coming from.
 const DEBUG = false
