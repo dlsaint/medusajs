@@ -18,10 +18,10 @@ services:
       NODE_ENV: development
       JWT_SECRET: some_jwt_secret
       COOKIE_SECRET: some_cookie_secret
-      API_URL: http://192.168.10.208:9000
-      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://12.168.10.208:9000
-      MEDUSA_BACKEND_URL: http://12.168.10.208:9000
-      NEXT_PUBLIC_BASE_URL: http://12.168.10.208:8000
+      API_URL: http://47.90.164.66:9000
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://47.90.164.66:9000
+      MEDUSA_BACKEND_URL: http://47.90.164.66:9000
+      NEXT_PUBLIC_BASE_URL: http://47.90.164.66:8000
       PORT: 9000
 
   storefront:
@@ -35,9 +35,9 @@ services:
     depends_on:
       - backend
     environment:
-      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://12.168.10.208:9000
-      MEDUSA_BACKEND_URL: http://12.168.10.208:9000
-      NEXT_PUBLIC_BASE_URL: http://12.168.10.208:8000
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://47.90.164.66:9000
+      MEDUSA_BACKEND_URL: http://47.90.164.66:9000
+      NEXT_PUBLIC_BASE_URL: http://47.90.164.66:8000
 
   postgres:
     image: postgres:10.4
