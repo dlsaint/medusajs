@@ -1,0 +1,64 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: backend:test
+    container_name: medusa-server
+    ports:
+      - "7001:7001"
+      - "9000:9000"
+    volumes:
+      - /root/data/docker/medusa/medusajs/backend/develop.sh:/app/medusa/develop.sh
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
+      REDIS_URL: redis://cache
+      NODE_ENV: development
+      JWT_SECRET: some_jwt_secret
+      COOKIE_SECRET: some_cookie_secret
+      API_URL: http://192.168.10.207:9000
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://192.168.10.207:9000
+      MEDUSA_BACKEND_URL: http://192.168.10.207:9000
+      NEXT_PUBLIC_BASE_URL: http://192.168.10.207:8000
+      ADMIN_CORS: http://192.168.10.207:7000,http://192.168.10.207:7001
+      STORE_CORS: http://192.168.10.207:8000
+      PORT: 9000
+
+  storefront:
+    build:
+      context: ./storefront
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    image: storefront:test
+    container_name: medusa-storefront
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://192.168.10.207:9000
+      MEDUSA_BACKEND_URL: http://192.168.10.207:9000
+      NEXT_PUBLIC_BASE_URL: http://192.168.10.207:8000
+
+  postgres:
+    image: postgres:10.4
+    ports:
+      - "5432:5432"
+    volumes:
+      - /root/data/docker/medusa/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: medusa-docker
+      ALLOW_IP_RANGE: 0.0.0.0/0
+
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+
+
